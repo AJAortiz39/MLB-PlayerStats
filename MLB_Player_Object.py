@@ -61,5 +61,3 @@ class MLB_Player(object):
         plt.ylabel('OPS')
         plt.grid()
         plt.show()
-
-        players_seasons = []
