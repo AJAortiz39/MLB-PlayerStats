@@ -31,16 +31,17 @@ def main():
                 print("\n Showing %i Stats for %s \n" % (show,player.player_name))
                 print(" Age: %i, Team: %s, Games: %i, Plate Appearences: %i, At Bats: %i, Runs: %i, Home Runs: %i, Runs Batted In: %i, Stolen Bases: %i" % (player.player_stats[index_of_year][0], player.player_stats[index_of_year][1], player.player_stats[index_of_year][2],player.player_stats[index_of_year][3],player.player_stats[index_of_year][4],player.player_stats[index_of_year][5],player.player_stats[index_of_year][6], player.player_stats[index_of_year][7],player.player_stats[index_of_year][8]))
                 print(" Caught Stealing: %i, Base on Balls: %s, Strikeouts: %i, Batting Average: %f, On Base Plus Slugging: %f, Awards: %s" % (player.player_stats[index_of_year][9], player.player_stats[index_of_year][10], player.player_stats[index_of_year][11],player.player_stats[index_of_year][12],player.player_stats[index_of_year][13],player.player_stats[index_of_year][14]))
-                
-  
-                      
+                                  
                       
                     
         
         
     elif option == "p":
         #Will Show Player's plot options
-        None 
+        pt = input(" Select stat to be compared vs MLB average.\n OPS\n ")
+        pt = pt.lower()
+        if pt == 'ops':
+            player.plot_ops()
     
 
     
