@@ -38,10 +38,13 @@ def main():
         
     elif option == "p":
         #Will Show Player's plot options
-        pt = input(" Select stat to be compared vs MLB average.\n OPS\n ")
+        pt = input(" Select stat to be compared vs MLB average.\n OPS\n Homeruns\n ")
         pt = pt.lower()
         if pt == 'ops':
             player.plot_ops()
+        if pt == "homeruns":
+            player.plot_hrs()
+        
     
 
     

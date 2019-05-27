@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 class MLB_Player(object):
 
     #attributes
-    lg_avgs = [.700, .721, .739, .750, .728]#2014-2018 ops avgs
+    lg_avg_ops = [.695, .719, .735, .749, .727]#2014-2018 Lg avg per 600 PA OPS 
+    lg_avg_hrs = [13, 16, 18, 20, 18] #2014-2018 Lg avg per 600 PA HR 
     mlb_term = [] #years in the mlb
     player_stats = [] #list will hold players stats
 
@@ -52,12 +53,27 @@ class MLB_Player(object):
         players_season = [i+1 for i in range(len(self.player_stats))] #list containing seasons
         ops_carrer_stat = [ e[-2] for e in self.player_stats]
 
-        x2 = [i for i in range(len(self.lg_avgs))]
+        x2 = [i for i in range(len(self.lg_avg_ops))]
         
-        plt.plot(players_season,ops_carrer_stat, 'bo-', x2, self.lg_avgs, 'ro-')
+        plt.plot(players_season,ops_carrer_stat, 'bo-', x2, self.lg_avg_ops, 'ro-')
         plt.ylim(0.65, 1.3)
         plt.legend([self.player_name, "League Average OPS"])
         plt.xlabel('Seasons')
         plt.ylabel('OPS')
+        plt.grid()
+        plt.show()
+
+    def plot_hrs(self):
+
+        players_season = [i+1 for i in range(len(self.player_stats))] #list containing seasons
+        hr_carrer_stat = [ e[6] for e in self.player_stats]
+
+        x2 = [i for i in range(len(self.lg_avg_hrs))]
+        
+        plt.plot(players_season,hr_carrer_stat, 'bo-', x2, self.lg_avg_hrs, 'ro-')
+        plt.ylim(0, 60)
+        plt.legend([self.player_name, "League Average Homeruns"])
+        plt.xlabel('Seasons')
+        plt.ylabel('Homeruns')
         plt.grid()
         plt.show()
