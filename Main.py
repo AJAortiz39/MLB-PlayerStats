@@ -1,6 +1,4 @@
 # MAIN
-#import numpy as np
-#import matplotlib.pyplot as plt
 
 from MLB_Player_Object import MLB_Player
 
